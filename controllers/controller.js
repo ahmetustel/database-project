@@ -158,6 +158,10 @@ const todo = async (req, res) => {
   }
 }
 
+const homepage = async (req, res) => {
+  res.render("index");
+}
+
 module.exports = {
   getUser,
   createUser,
@@ -165,5 +169,6 @@ module.exports = {
   login,
   refreshToken,
   logout,
-  todo
+  todo,
+  homepage
 };

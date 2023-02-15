@@ -7,7 +7,8 @@ const {
   login,
   refreshToken,
   logout,
-  todo
+  todo,
+  homepage
 } = require("../controllers/controller");
 
 const router = express.Router();
@@ -27,5 +28,9 @@ router.post("/token", refreshToken);
 router.delete("/logout", logout);
 
 router.post("/todo", todo);
+
+router.get("/todo", todo);
+
+router.get("/homepage", homepage);
 
 module.exports = router;
