@@ -1,36 +1,40 @@
 const express = require("express");
 const authToken = require("../middleware/authToken");
-const {
-  getUser,
-  createUser,
-  deleteUser,
-  login,
-  refreshToken,
-  logout,
-  todo,
-  homepage
-} = require("../controllers/controller");
+// const {
+//   getUser,
+//   createUser,
+//   deleteUser,
+//   login,
+//   refreshToken,
+//   logout,
+//   todo,
+//   homepage,
+// } = require("../controllers/controller");
+
+const {getCustomers} = require("../controllers/controller2");
 
 const router = express.Router();
 
 /* Creating the routes for the user controller. */
 
-router.get("/users/:name",authToken, getUser);
+// router.get("/users/:name",authToken, getUser);
 
-router.post("/createUser", createUser);
+// router.post("/createUser", createUser);
 
-router.delete("/users/:name", deleteUser);
+// router.delete("/users/:name", deleteUser);
 
-router.post("/login",login);
+// router.post("/login",login);
 
-router.post("/token", refreshToken);
+// router.post("/token", refreshToken);
 
-router.delete("/logout", logout);
+// router.delete("/logout", logout);
 
-router.post("/todo", todo);
+// router.post("/todo", todo);
 
-router.get("/todo", todo);
+// router.get("/todo", todo);
 
-router.get("/homepage", homepage);
+// router.get("/homepage", homepage);
+
+router.get("/:name", getCustomers);
 
 module.exports = router;
